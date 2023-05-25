@@ -13,12 +13,15 @@ export class AuthorsService {
   ) {}
 
   findAll() {
-    return this.authorRepository.find();
+    return this.authorRepository.find({
+      relations: ['books'],
+    });
   }
 
   async findOne(id: string) {
     const author = await this.authorRepository.findOne({
       where: { id },
+      relations: ['books'],
     });
 
     if (!author) {
