@@ -8,7 +8,7 @@ import { InjectRepository } from '@nestjs/typeorm';
 import { Book } from './entities/books.entity';
 import { Repository } from 'typeorm';
 import { CreateBookDto } from './dtos/create-book.dto';
-import { Author } from 'src/authors/entities/author.entity';
+import { Author } from '../authors/entities/author.entity';
 
 @Injectable()
 export class BooksService {
